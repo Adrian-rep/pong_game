@@ -1,28 +1,25 @@
 import pygame
 
 
-class Ball:
+class Paddles:
     VEL = 6
     COLOR = (255, 255, 255)
 
-    def __init__(self, x, y, radius):
+    def __init__(self, x, y, width, height):
         self.x = self.start_x = x
         self.y = self.start_y = y
-        self.radius = radius
-
-        # first move during initialization
-        self.x_vel = self.VEL
-        self.y_vel = 0
+        self.width = width
+        self.height = height
 
     def draw(self, win):
-        pygame.draw.circle(win, self.COLOR, (self.x, self.y), self.radius)
+        pygame.draw.rect(win, self.COLOR, (self.x, self.y, self.width, self.height))
 
-    def move(self):
-        self.x += self.x_vel
-        self.y += self.y_vel
+    def move(self, up=False):
+        if up:
+            self.y -= self.VEL
+        else:
+            self.y += self.VEL
 
     def reset(self):
         self.x = self.start_x
         self.y = self.start_y
-        self.x_vel *= -1
-        self.y_vel = 0

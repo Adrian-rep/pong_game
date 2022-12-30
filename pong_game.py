@@ -1,10 +1,10 @@
 import time
 import pygame
 import random
-from game_functions1 import Game
-from paddles_class1 import Paddles
-from ball_class1 import Ball
-import button1
+from game_functions import Game
+from paddle_class import Paddles
+from ball_class import Ball
+from button_class import Button
 
 
 def main():
@@ -21,8 +21,8 @@ def main():
         exit_img = pygame.image.load('button.png')
 
         # create button instances
-        start_button = button.Button(start_img, game.WIDTH / 4, game.HEIGHT / 2, 'PLAY')
-        exit_button = button.Button(exit_img, 3 * game.WIDTH / 4, game.HEIGHT / 2, 'QUIT')
+        start_button = Button(start_img, game.WIDTH / 4, game.HEIGHT / 2, 'PLAY')
+        exit_button = Button(exit_img, 3 * game.WIDTH / 4, game.HEIGHT / 2, 'QUIT')
 
         if start_button.draw(menu_screen):
             game_screen = pygame.display.set_mode((game.WIDTH, game.HEIGHT))

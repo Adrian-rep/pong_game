@@ -1,6 +1,6 @@
 import pygame
-from paddles_class1 import Paddles
-from ball_class1 import Ball
+from paddle_class import Paddles
+from ball_class import Ball
 pygame.init()
 
 
